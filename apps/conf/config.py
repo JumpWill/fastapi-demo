@@ -1,3 +1,4 @@
+from distutils.debug import DEBUG
 from functools import lru_cache
 from pydantic import BaseSettings
 
@@ -11,7 +12,8 @@ class Settings(BaseSettings):
     DESCRIPTION: str = ""
     DOCS_URL: str = '/v1/docs'
     OPENAPI_URL: str = '/v1/openapi'
-    REDOCS_URL: str = None
+    REDOC_URL: str = None
+    DEBUG: bool = True
 
     # 静态文件代理
     STATIC_FILE: bool = True
