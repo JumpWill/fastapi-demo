@@ -1,4 +1,5 @@
 from functools import lru_cache
+from typing import List
 from pydantic import BaseSettings
 
 
@@ -38,6 +39,9 @@ class Settings(BaseSettings):
     REDIS_PASSWORD: str = ''
     REDIS_DATABASE: int = 0
     REDIS_TIMEOUT: int = 10
+
+    # Elasticsearch
+    ELASTICSEARCH_HOSTS: List = []
 
     # Captcha
     CAPTCHA_EXPIRATION_TIME: int = 60 * 2  # 单位：s

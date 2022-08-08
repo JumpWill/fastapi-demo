@@ -1,8 +1,8 @@
 from fastapi import FastAPI
 from tortoise.contrib.fastapi import register_tortoise
 
-from ..conf import settings
-from .. import models
+from apps.conf import settings
+from apps import models
 
 db_config = {
     'connections': {
