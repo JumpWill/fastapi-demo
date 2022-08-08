@@ -13,5 +13,3 @@ class Filter(BaseModel):
     # 根据需求来设置
     name: Optional[str] = Field(description="名称查询")
     status: Optional[StatusEnum] = Field(description="状态查询")
-
-    

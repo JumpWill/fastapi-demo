@@ -3,14 +3,13 @@ from fastapi.middleware.cors import CORSMiddleware
 
 from ..api import router
 from ..conf import settings
-from ..db import register_db
+from ..db.mysql import register_db
 from .exception import register_exception_handler
 
 
-def get_app()->FastAPI:
-    
+def get_app() -> FastAPI:
     application = FastAPI(
-        title=settings.TITLE,   # 文档标题
+        title=settings.TITLE,  # 文档标题
         description=settings.DESCRIPTION,  # 文档描述
         version=settings.VERSION,  # 版本描述
         docs_url=settings.DOCS_URL,  # 文档路径
@@ -32,7 +31,3 @@ def get_app()->FastAPI:
     application.include_router(router, prefix="/app")
 
     return application
-
-
-
-

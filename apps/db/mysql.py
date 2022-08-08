@@ -4,7 +4,6 @@ from tortoise.contrib.fastapi import register_tortoise
 from ..conf import settings
 from .. import models
 
-
 db_config = {
     'connections': {
         'default': {
