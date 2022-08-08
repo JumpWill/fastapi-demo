@@ -1,10 +1,10 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
-from ..api import router
-from ..conf import settings
-from ..db.mysql import register_db
-from .exception import register_exception_handler
+from apps.api import router
+from apps.conf import settings
+from apps.db.mysql import register_db
+from apps.app.exception import register_exception_handler
 
 
 def get_app() -> FastAPI:

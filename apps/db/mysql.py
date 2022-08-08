@@ -9,12 +9,12 @@ db_config = {
         'default': {
             'engine': 'tortoise.backends.mysql',
             'credentials': {
-                'host': settings.MYSQL_HOST,
-                'port': settings.MYSQL_PORT,
-                'user': settings.MYSQL_USER,
-                'password': settings.MYSQL_PASSWORD,
-                'database': settings.MYSQL_DATABASE,
-                'charset': settings.MYSQL_ENCODING,
+                'host': settings.DB_HOST,
+                'port': settings.DB_PORT,
+                'user': settings.DB_USER,
+                'password': settings.DB_PASSWORD,
+                'database': settings.DB_DATABASE,
+                'charset': settings.DB_ENCODING,
                 'pool_recycle': 21600
                 # 'echo': f'{settings.DB_ECHO}'
             }

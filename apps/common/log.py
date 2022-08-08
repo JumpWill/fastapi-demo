@@ -1,7 +1,7 @@
 import os
 
 from loguru import logger
-from ..conf import settings
+from apps.conf import settings
 
 
 class Logger:

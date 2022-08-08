@@ -9,7 +9,7 @@ class Settings(BaseSettings):
     TITLE: str = 'FastAPI'
     VERSION: str = 'v0.0.1'
     DESCRIPTION: str = ""
-    DOCS_URL: str = '/v1/docs'
+    DOCS_URL: str = '/docs'
     OPENAPI_URL: str = '/v1/openapi'
     REDOC_URL: str = None
     DEBUG: bool = True
@@ -56,7 +56,7 @@ class Settings(BaseSettings):
     MIDDLEWARE_ACCESS: bool = True
 
 
-@lru_cache
+@lru_cache(maxsize=128)
 def get_settings():
     """ 读取配置优化写法 """
     return Settings()
