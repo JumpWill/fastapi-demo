@@ -1,6 +1,7 @@
 # fastapi-demo
 fastapi and tortoise-orm
 # 项目结构
+```html
 └─apps
     ├─api     api
     │  └─v1   版本划分
@@ -12,4 +13,5 @@ fastapi and tortoise-orm
     ├─models  表模型
     ├─schemas 数据模型 
     └─utils   工具
-—─dockerfile  
+—─dockerfile
+```
