@@ -1,7 +1,7 @@
 from elasticsearch import AsyncElasticsearch, NotFoundError
 from elasticsearch.helpers import async_streaming_bulk
 
-from ..conf.config import settings
+from apps.conf.config import settings
 
 
 class Es:

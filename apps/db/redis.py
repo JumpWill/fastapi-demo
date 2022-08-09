@@ -5,8 +5,8 @@ import sys
 from aioredis import Redis, TimeoutError, AuthenticationError
 
 
-from ..common.log import logger as log
-from ..conf import settings
+from apps.common.log import logger as log
+from apps.conf import settings
 
 
 class RedisCli(Redis):

@@ -2,7 +2,7 @@ from datetime import datetime
 from uuid import UUID
 import time
 from pydantic import Field, BaseModel
-from ..conf import settings
+from apps.conf import settings
 
 
 class Payload(BaseModel):

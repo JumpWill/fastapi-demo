@@ -1,7 +1,7 @@
 import jwt
-from ..conf import settings
-from ..schemas.jwt import Payload
-from ..common.log import logger
+from apps.conf import settings
+from apps.schemas.jwt import Payload
+from apps.common.log import logger
 
 
 def encoder(payload: Payload) -> str:

@@ -4,7 +4,7 @@ from uuid import UUID
 from pydantic import BaseModel
 from tortoise import Model
 
-from ..schemas.request import PageAndLimit
+from apps.schemas.request import PageAndLimit
 
 ModelType = TypeVar('ModelType', bound=Model)
 CreateSchemaType = TypeVar("CreateSchemaType", bound=BaseModel)

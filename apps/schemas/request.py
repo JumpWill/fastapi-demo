@@ -1,6 +1,6 @@
 from typing import Optional
 from pydantic import BaseModel, Field
-from ..models.constant import StatusEnum
+from apps.models.constant import StatusEnum
 
 
 class PageAndLimit(BaseModel):
