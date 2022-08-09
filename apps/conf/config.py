@@ -11,6 +11,7 @@ class Settings(BaseSettings):
     VERSION: str = 'v0.0.1'
     DESCRIPTION: str = ""
     DOCS_URL: str = '/docs'
+    URL_PREFIX: str = '/app'
     OPENAPI_URL: str = '/v1/openapi'
     REDOC_URL: str = None
     DEBUG: bool = True

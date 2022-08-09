@@ -28,6 +28,6 @@ def get_app() -> FastAPI:
     # 注册数据库连接
     register_db(application)
     # 添加路由
-    application.include_router(router, prefix="/app")
+    application.include_router(router, prefix=settings.URL_PREFIX)
 
     return application
