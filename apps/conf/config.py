@@ -7,6 +7,7 @@ class Settings(BaseSettings):
     """配置类"""
 
     # FastAPI
+    APP: str = "study"
     TITLE: str = "FastAPI"
     VERSION: str = "v0.0.1"
     DESCRIPTION: str = ""

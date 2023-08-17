@@ -1,17 +1,15 @@
-import time
 import tortoise
 import asyncio
+from apps.common.log import logger
 
 
 async def keep_connection():
-    print("-----")
-
     async def keep():
         while True:
-            print("s111")
+            logger.info("start keeping db")
             for con in tortoise.connections.all():
                 await con.execute_query("select 1")
+            logger.info("keep db ok")
             await asyncio.sleep(60)
-            print("keep con")
 
     asyncio.create_task(keep())
