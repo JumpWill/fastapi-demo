@@ -12,8 +12,5 @@ RUN  cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime && echo 'Asia/Shanghai'
    && pip install --no-cache-dir --upgrade -r /code/apps/requirements.txt 
 
 
-## 6、运行服务
-
-
-# gunicorn main:app --workers 4 --worker-class uvicorn.workers.UvicornWorker --bind 0.0.0.0:80
+# 6、运行服务
 CMD ["gunicorn", "apps:app", "--workers", "4", "--worker-class", "uvicorn.workers.UvicornWorker" , "--bind" ,"0.0.0.0:80" ]
