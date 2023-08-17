@@ -13,4 +13,5 @@ RUN  cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime && echo 'Asia/Shanghai'
 
 
 # 6、运行服务
-CMD ["gunicorn", "apps:app", "--workers", "4", "--worker-class", "uvicorn.workers.UvicornWorker" , "--bind" ,"0.0.0.0:80" ]
+CMD ["gunicorn", "apps:app", "--workers", "4", "--worker-class", "uvicorn.workers.UvicornWorker" , "--bind" ,"0.0.0.0:80" ,"--access-logfile", "-", "--error-logfile", "-"]
+# docker run --name mysql -e MYSQL_ROOT_PASSWORD=123456 -p 3306:3306 -v /Users/will/doc/docker/mysql:/var/lib/mysql -d mysql

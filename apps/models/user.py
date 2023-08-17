@@ -4,7 +4,7 @@ from apps.conf.config import settings
 
 
 class User(Base, IntPk):
-    username = fields.CharField(unique=True, max_length=10, null=False)
+    useraname = fields.CharField(unique=True, max_length=10, null=False)
 
     class Meta:
         table = f"{settings.APP}__user"
