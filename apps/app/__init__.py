@@ -26,11 +26,10 @@ def get_app() -> FastAPI:
     # 重写异常处理
     register_exception_handler(application)
     # 注册数据库连接
-    register_db(application)
+    # register_db(application)
     # 添加路由
     application.include_router(router, prefix=settings.URL_PREFIX)
     # add start up
-    from apps.app.start_up import keep_connection
-
-    application.on_event("startup")(keep_connection)
+    # from apps.app.start_up import keep_connection
+    # application.on_event("startup")(keep_connection)
     return application
