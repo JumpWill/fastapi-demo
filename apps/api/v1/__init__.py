@@ -6,4 +6,4 @@ from apps.api.v1.live import router as live_router
 router = APIRouter()
 
 router.include_router(auth_router, prefix="/auth")
-router.include_router(auth_router, prefix="/live")
+router.include_router(live_router, prefix="/live")

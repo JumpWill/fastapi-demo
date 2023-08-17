@@ -5,29 +5,29 @@ from apps.conf import settings
 from apps import models
 
 db_config = {
-    'connections': {
-        'default': {
-            'engine': 'tortoise.backends.mysql',
-            'credentials': {
-                'host': settings.DB_HOST,
-                'port': settings.DB_PORT,
-                'user': settings.DB_USER,
-                'password': settings.DB_PASSWORD,
-                'database': settings.DB_DATABASE,
-                'charset': settings.DB_ENCODING,
-                'pool_recycle': 21600
+    "connections": {
+        "default": {
+            "engine": "tortoise.backends.mysql",
+            "credentials": {
+                "host": settings.DB_HOST,
+                "port": settings.DB_PORT,
+                "user": settings.DB_USER,
+                "password": settings.DB_PASSWORD,
+                "database": settings.DB_DATABASE,
+                "charset": settings.DB_ENCODING,
+                "pool_recycle": 21600
                 # 'echo': f'{settings.DB_ECHO}'
-            }
+            },
         },
     },
-    'apps': {
-        'models': {
-            'models': [*[models]],
-            'default_connection': 'default',
+    "apps": {
+        "models": {
+            "models": [*[models]],
+            "default_connection": "default",
         },
     },
-    'use_tz': False,
-    'timezone': 'Asia/Shanghai'
+    "use_tz": False,
+    "timezone": "Asia/Shanghai",
 }
 
 

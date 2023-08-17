@@ -3,7 +3,7 @@ from fastapi.middleware.cors import CORSMiddleware
 
 from apps.api import router
 from apps.conf import settings
-from apps.db.mysql import register_db
+from apps.db.sql import register_db
 from apps.app.exception import register_exception_handler
 
 
@@ -13,7 +13,7 @@ def get_app() -> FastAPI:
         description=settings.DESCRIPTION,  # 文档描述
         version=settings.VERSION,  # 版本描述
         docs_url=settings.DOCS_URL,  # 文档路径
-        redoc_url=settings.REDOC_URL  # redoc文档路径
+        redoc_url=settings.REDOC_URL,  # redoc文档路径
     )
     # 添加跨域中间件
     application.add_middleware(
@@ -29,5 +29,8 @@ def get_app() -> FastAPI:
     register_db(application)
     # 添加路由
     application.include_router(router, prefix=settings.URL_PREFIX)
+    # add start up
+    from apps.app.start_up import keep_connection
 
+    application.on_event("startup")(keep_connection)
     return application

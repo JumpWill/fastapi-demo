@@ -3,6 +3,6 @@ from fastapi import APIRouter
 router = APIRouter()
 
 
-@router.get("/live")
-def test():
+@router.get("")
+def healthy():
     return {"code": 200}

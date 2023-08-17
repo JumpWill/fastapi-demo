@@ -4,15 +4,15 @@ from pydantic import BaseSettings
 
 
 class Settings(BaseSettings):
-    """ 配置类 """
+    """配置类"""
 
     # FastAPI
-    TITLE: str = 'FastAPI'
-    VERSION: str = 'v0.0.1'
+    TITLE: str = "FastAPI"
+    VERSION: str = "v0.0.1"
     DESCRIPTION: str = ""
-    DOCS_URL: str = '/docs'
-    URL_PREFIX: str = '/app'
-    OPENAPI_URL: str = '/v1/openapi'
+    DOCS_URL: str = "/docs"
+    URL_PREFIX: str = "/app"
+    OPENAPI_URL: str = "/v1/openapi"
     REDOC_URL: str = None
     DEBUG: bool = True
 
@@ -20,24 +20,24 @@ class Settings(BaseSettings):
     STATIC_FILE: bool = True
 
     # Uvicorn
-    UVICORN_HOST: str = '127.0.0.1'
-    UVICORN_PORT: int = 8000
+    UVICORN_HOST: str = "127.0.0.1"
+    UVICORN_PORT: int = 8080
     UVICORN_RELOAD: bool = True
 
     # SQL
     DB_ADD_EXCEPTION_HANDLERS: bool = True  # 线上环境请使用 False
     DB_ECHO: bool = False  # 是否显示SQL语句
-    DB_HOST: str = '127.0.0.1'
+    DB_HOST: str = "127.0.0.1"
     DB_PORT: int = 3306
-    DB_USER: str = 'root'
-    DB_PASSWORD: str = '123456'
-    DB_DATABASE: str = 'study'
-    DB_ENCODING: str = 'utf8mb4'
+    DB_USER: str = "root"
+    DB_PASSWORD: str = "123456"
+    DB_DATABASE: str = "study"
+    DB_ENCODING: str = "utf8mb4"
 
     # Redis
-    REDIS_HOST: str = '127.0.0.1'
+    REDIS_HOST: str = "127.0.0.1"
     REDIS_PORT: int = 6379
-    REDIS_PASSWORD: str = ''
+    REDIS_PASSWORD: str = ""
     REDIS_DATABASE: int = 0
     REDIS_TIMEOUT: int = 10
 
@@ -48,8 +48,8 @@ class Settings(BaseSettings):
     CAPTCHA_EXPIRATION_TIME: int = 60 * 2  # 单位：s
 
     # JWT
-    JWT_TOKEN_ALGORITHM: str = 'HS256'
-    JWT_TOKEN_SECRET_KEY: str = '123456'
+    JWT_TOKEN_ALGORITHM: str = "HS256"
+    JWT_TOKEN_SECRET_KEY: str = "123456"
     JWT_TOKEN_DURATION: int = 60 * 24 * 3
 
     # Cookies
@@ -63,7 +63,7 @@ class Settings(BaseSettings):
 
 @lru_cache(maxsize=128)
 def get_settings():
-    """ 读取配置优化写法 """
+    """读取配置优化写法"""
     return Settings()
 
 
